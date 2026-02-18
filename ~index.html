@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parabéns, Meu Amor, minha princesa!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff9a9e, #fecfef, #ffecd2);
+            background-size: cover;
+            color: #333;
+            overflow: hidden;
+            transition: background 1s ease;
+        }
+        
+        .container {
+            text-align: center;
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        #trick-button {
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            position: absolute;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        #trick-button:hover {
+            transform: scale(1.1);
+        }
+        
+        .congrats {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+        
+        .congrats h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #ff6b6b;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .congrats p {
+            font-size: 1.5em;
+            margin: 10px 0;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        
+        .heart {
+            font-size: 4em;
+            color: #ff6b6b;
+            animation: pulse 1s infinite;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Fundo com imagem (substitua 'background.jpg' por sua imagem) */
+        .congrats {
+            background: url('background.jpg') no-repeat center center;
+            background-size: cover;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="trick-button">Clique Aqui</button>
+        
+        <div class="congrats" id="congrats">
+            <div class="heart">❤️</div>
+            <h1>Parabéns, Meu Amor!</h1>
+            <p>Hoje é o seu dia especial, e eu queria te dizer o quanto você significa para mim. Você é a luz da minha vida, a razão do meu sorriso todos os dias.</p>
+            <p>Lembro-me do dia em que nos conhecemos, e desde então, cada momento ao seu lado é uma aventura incrível. Você me faz ser uma pessoa melhor, e eu te amo mais do que palavras podem expressar.</p>
+            <p>Que este aniversário seja cheio de alegria, amor e momentos inesquecíveis. Você merece tudo de bom no mundo, e eu prometo estar sempre ao seu lado.</p>
+            <p>Te amo infinitamente! 🎉🥳</p>
+            <p>Com todo o meu coração,<br>Seu namorado apaixonado
+            <p>eu te amo mais que tudo minha vida.
+              <p>DE; seu chamego PARA; Yasmi amor ❤🤍</p>   
+        </div>
+    </div>
+
+    <script>
+        const button = document.getElementById('trick-button');
+        const congrats = document.getElementById('congrats');
+        let clickCount = 0;
+
+        button.addEventListener('click', () => {
+            clickCount++;
+            
+            // Move o botão para uma posição aleatória
+            const maxX = window.innerWidth - button.offsetWidth;
+            const maxY = window.innerHeight - button.offsetHeight;
+            const randomX = Math.random() * maxX;
+            const randomY = Math.random() * maxY;
+            
+            button.style.left = `${randomX}px`;
+            button.style.top = `${randomY}px`;
+            
+            // Após 5 cliques, mostra a mensagem de parabéns
+            if (clickCount >= 5) {
+                button.style.display = 'none';
+                congrats.style.display = 'flex';
+            }
+        });
+    </script>
+</body>
+</html>
